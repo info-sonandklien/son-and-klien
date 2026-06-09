@@ -1,0 +1,125 @@
+{
+  "Metadata": {
+    "title": "SON AND KLIEN — Integrated Agricultural Solutions",
+    "description": "SON AND KLIEN Co., Ltd. provides agricultural consulting, Smart Farming, greenhouse design, irrigation systems, and export services across Thailand.",
+    "keywords": "agricultural consulting Thailand, smart farming, greenhouse design, irrigation systems, organic agriculture"
+  },
+  "Navigation": {
+    "services": "Services",
+    "caseStudies": "Case Studies",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "bookConsultation": "Free Consultation",
+    "requestQuotation": "Request Quote",
+    "allServices": "All Services",
+    "switchLang": "ไทย"
+  },
+  "Hero": {
+    "badge": "Agricultural Solutions for the Future",
+    "headline": "Integrated Agricultural Solutions\nfor Sustainable Growth",
+    "subheadline": "From Farm Design to Market Expansion — We Handle Every Step",
+    "ctaPrimary": "Book Free Consultation",
+    "ctaSecondary": "Request Proposal",
+    "ctaCall": "Call Us Now",
+    "scrollDown": "Scroll Down"
+  },
+  "Trust": {
+    "years": "Years Experience",
+    "yearsDesc": "Industry Expertise",
+    "projects": "Projects Completed",
+    "projectsDesc": "Across Thailand",
+    "provinces": "Provinces",
+    "provincesDesc": "Served Nationwide",
+    "satisfaction": "Satisfaction Rate",
+    "satisfactionDesc": "Client Rated",
+    "industries": "Industries",
+    "industriesDesc": "We Serve",
+    "partnersLabel": "Partners & Certifications"
+  },
+  "Services": {
+    "sectionLabel": "Complete Solutions",
+    "sectionTitle": "Agricultural Solutions for Every Need",
+    "sectionDesc": "End-to-end services from consulting and design to construction, training, and export.",
+    "learnMore": "Learn More",
+    "getQuote": "Get Quote",
+    "viewAll": "View All Services"
+  },
+  "Comparison": {
+    "sectionLabel": "Why Choose Us",
+    "sectionTitle": "SON AND KLIEN vs. Traditional Providers",
+    "traditional": "Traditional Provider",
+    "us": "SON AND KLIEN",
+    "available": "Available",
+    "partial": "Partial",
+    "notAvailable": "Not Available"
+  },
+  "CTA": {
+    "consultTitle": "Ready to Transform Your Farm?",
+    "consultDesc": "Talk to our experts for free — 45 minutes, no cost, no commitment.",
+    "bookBtn": "Book Free Consultation",
+    "quoteBtn": "Request Proposal"
+  },
+  "Footer": {
+    "tagline": "Integrated Agricultural Solutions",
+    "description": "Building tomorrow's agriculture with technology, sustainability, and expertise.",
+    "servicesTitle": "Our Services",
+    "quickLinksTitle": "Quick Links",
+    "contactTitle": "Contact Us",
+    "workingHours": "Mon–Fri 8:00–17:00",
+    "lineOA": "Contact via LINE OA",
+    "copyright": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "AIChatWidget": {
+    "agentName": "AgriAI Assistant",
+    "online": "Online 24/7",
+    "welcome": "Hello! I'm the AI Assistant for SON AND KLIEN 🌱\n\nI can recommend services, answer questions, or help you book a free consultation.\n\nWhat can I help you with today?",
+    "placeholder": "Type your question...",
+    "error": "Sorry, an error occurred. Please try again or contact us directly.",
+    "minimized": "AI Assistant",
+    "disclaimer": "AI provides preliminary guidance. For in-depth advice, book a consultation.",
+    "quickReply1": "Book Free Consultation",
+    "quickReply2": "Ask About Pricing",
+    "quickReply3": "What is Smart Farming?",
+    "quickReply4": "Irrigation Systems"
+  },
+  "BookConsultation": {
+    "title": "Book Free Consultation",
+    "subtitle": "Talk to an expert within 24 hours",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "company": "Company / Farm (optional)",
+    "serviceInterest": "Service of Interest",
+    "preferredDate": "Preferred Date",
+    "preferredTime": "Preferred Time",
+    "online": "Online (Video Call)",
+    "onsite": "On-site Visit",
+    "message": "Additional Notes",
+    "messagePlaceholder": "Farm size, crop type, or challenges you're facing...",
+    "pdpaConsent": "I consent to the collection and use of my personal data in accordance with the Privacy Policy (PDPA)",
+    "submit": "Book My Free Consultation",
+    "submitting": "Submitting...",
+    "confirmNote": "We will confirm your booking within 2 hours on business days",
+    "whyTitle": "Why Book With Us?",
+    "why1": "Free 45-minute session",
+    "why2": "Direct access to agricultural experts",
+    "why3": "Advice tailored to your farm",
+    "why4": "Zero obligation"
+  },
+  "ThankYou": {
+    "title": "Thank You!",
+    "subtitle": "We've received your details",
+    "consultation": "Our team will confirm your appointment within 2 hours on business days.",
+    "lead": "We will contact you within 24 hours on business days.",
+    "nextSteps": "Next Steps",
+    "step1": "We'll send a confirmation email shortly",
+    "step2": "Our expert will call to confirm details",
+    "step3": "Prepare your farm info for an effective consultation",
+    "readBlog": "Read Our Blog",
+    "goHome": "Back to Home"
+  }
+}

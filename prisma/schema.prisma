@@ -1,0 +1,206 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Lead {
+  id               String    @id @default(cuid())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  name             String
+  email            String    @unique
+  phone            String?
+  company          String?
+  jobTitle         String?
+
+  serviceInterests String[]
+  farmSize         String?
+  budgetRange      String?
+  message          String?
+
+  source           String?   @default("website")
+  medium           String?
+  campaign         String?
+  referrer         String?
+  landingPage      String?
+
+  status           String    @default("NEW")
+  score            Int       @default(0)
+  language         String    @default("th")
+  assignedTo       String?
+  notes            String?
+
+  hubspotContactId String?
+  hubspotDealId    String?
+  crmSyncStatus    String    @default("PENDING")
+  crmSyncedAt      DateTime?
+
+  consentPdpa      Boolean   @default(false)
+  consentDate      DateTime?
+  consentIp        String?
+
+  consultations    Consultation[]
+  quotations       Quotation[]
+  activities       LeadActivity[]
+  emailLogs        EmailLog[]
+
+  @@index([email])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Consultation {
+  id               String    @id @default(cuid())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  leadId           String
+  lead             Lead      @relation(fields: [leadId], references: [id])
+
+  serviceInterests String[]
+  cropTypes        String[]
+  farmSize         String?
+  preferredDate    DateTime?
+  preferredTime    String?
+  confirmedDate    DateTime?
+  confirmedTime    String?
+
+  status           String    @default("PENDING")
+  meetingLink      String?
+  notes            String?
+  outcome          String?
+  reminderSent     Boolean   @default(false)
+
+  @@index([leadId])
+  @@index([status])
+}
+
+model Quotation {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  quotationNumber String   @unique @default(cuid())
+  leadId          String
+  lead            Lead     @relation(fields: [leadId], references: [id])
+
+  services        String[]
+  farmSize        Float?
+  location        String?
+  currentCrop     String?
+  timeline        String?
+  budgetRange     String?
+  notes           String?
+
+  status          String   @default("DRAFT")
+  totalAmount     Float?
+  currency        String   @default("THB")
+  sentAt          DateTime?
+  viewedAt        DateTime?
+
+  @@index([leadId])
+}
+
+model NewsletterSubscriber {
+  id               String    @id @default(cuid())
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  email            String    @unique
+  firstName        String?
+  categories       String[]
+  language         String    @default("th")
+  source           String?
+  isActive         Boolean   @default(true)
+  confirmedAt      DateTime?
+  unsubscribedAt   DateTime?
+  unsubscribeToken String    @unique @default(cuid())
+
+  @@index([email])
+}
+
+model EmailLog {
+  id         String   @id @default(cuid())
+  createdAt  DateTime @default(now())
+
+  leadId     String?
+  lead       Lead?    @relation(fields: [leadId], references: [id])
+  email      String
+  type       String
+  subject    String
+  status     String
+  providerId String?
+
+  @@index([leadId])
+  @@index([email])
+}
+
+model ChatSession {
+  id            String        @id @default(cuid())
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  sessionId     String        @unique
+  leadId        String?
+  language      String        @default("th")
+  ipAddress     String?
+  leadCaptured  Boolean       @default(false)
+  capturedEmail String?
+
+  messages      ChatMessage[]
+
+  @@index([sessionId])
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  createdAt DateTime    @default(now())
+
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id])
+
+  role      String
+  content   String      @db.Text
+  tokens    Int?
+
+  @@index([sessionId])
+}
+
+model LeadActivity {
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+
+  leadId      String
+  lead        Lead     @relation(fields: [leadId], references: [id])
+
+  type        String
+  description String
+  metadata    Json?
+  staffId     String?
+
+  @@index([leadId])
+}
+
+model RoiCalculation {
+  id                  String   @id @default(cuid())
+  createdAt           DateTime @default(now())
+
+  leadEmail           String?
+  farmSize            Float
+  currentCrop         String
+  currentYield        Float
+  currentCost         Float
+  currentPrice        Float
+  servicesInterested  String[]
+
+  projectedRevenue    Float
+  netBenefit          Float
+  roiMonths           Float
+  convertedToLead     Boolean  @default(false)
+
+  @@index([leadEmail])
+}

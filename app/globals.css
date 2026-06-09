@@ -1,26 +1,72 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* SON AND KLIEN Brand Colors */
+  --color-primary:        #0B7A3E;
+  --color-primary-50:     #E8F5EE;
+  --color-primary-100:    #C5E6D3;
+  --color-primary-200:    #9ED4B5;
+  --color-primary-300:    #76C296;
+  --color-primary-400:    #4EB078;
+  --color-primary-500:    #0B7A3E;
+  --color-primary-600:    #096B37;
+  --color-primary-700:    #075C2F;
+  --color-primary-800:    #054D27;
+  --color-primary-900:    #033E1F;
+  --color-secondary:      #2FA84F;
+  --color-accent:         #F2B705;
+  --color-background:     #F8FAF7;
+
+  /* Typography */
+  --font-sans: Inter, 'Noto Sans Thai', ui-sans-serif, system-ui, sans-serif;
+  --font-thai: 'Noto Sans Thai', Inter, ui-sans-serif, system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-in-up:   fade-in-up 0.6s ease-out forwards;
+  --animate-pulse-glow:   pulse-glow 2s infinite;
+  --animate-bounce-dot:   bounce-dot 1s infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(11, 122, 62, 0.4); }
+  50%       { box-shadow: 0 0 0 15px rgba(11, 122, 62, 0); }
 }
+
+@keyframes bounce-dot {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-4px); }
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #F8FAF7;
+  color: #1a1a1a;
+  font-family: Inter, 'Noto Sans Thai', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Thai font helper */
+.font-thai {
+  font-family: 'Noto Sans Thai', Inter, sans-serif;
+  line-height: 1.8;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #0B7A3E; border-radius: 3px; }
+
+/* Focus visible */
+:focus-visible { outline: 2px solid #0B7A3E; outline-offset: 2px; }
