@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import OpenAI from 'openai'
 import { checkRateLimit } from '@/lib/rate-limit'
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+function getOpenAI() {
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY ?? 'placeholder' })
+}
 
 const SYSTEM_PROMPT: Record<string, string> = {
   th: `คุณคือผู้ช่วย AI ของบริษัท SON AND KLIEN Co., Ltd. ผู้เชี่ยวชาญด้านโซลูชันเกษตรกรรมครบวงจรในประเทศไทย
@@ -29,7 +31,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
     }
 
-    const stream = await openai.chat.completions.create({
+    const stream = await getOpenAI().chat.completions.create({
       model: 'gpt-4o-mini',
       stream: true,
       max_tokens: 500,
